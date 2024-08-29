@@ -3,6 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import { HOST, PORT } from './config/environments';
+import { startDb } from './db/startDb';
 
 export default class Server {
 
@@ -24,7 +25,7 @@ export default class Server {
   }
 
   private ConnectDb() {
-    console.log('Connected to Mysql');
+    startDb()
   }
 
   private Middleware() {
